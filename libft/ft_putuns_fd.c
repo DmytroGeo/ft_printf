@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putuns_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgeorgiy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 15:42:05 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2024/11/27 15:33:28 by dgeorgiy         ###   ########.fr       */
+/*   Created: 2024/11/28 11:15:16 by dgeorgiy          #+#    #+#             */
+/*   Updated: 2024/11/28 11:16:04 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd, int *count)
+void	ft_putuns_fd(unsigned int n, int fd, int *count)
 {
-	ft_putstr_fd(s, fd, count);
-	ft_putchar_fd('\n', fd, count);
+	long int	l;
+
+	l = n;
+	if (l < 0)
+	{
+		ft_putchar_fd('-', fd, count);
+		l *= -1;
+	}
+	if (l >= 10)
+	{
+		ft_putuns_fd(l / 10, fd, count);
+		ft_putchar_fd((l % 10) + 48, fd, count);
+	}
+	else
+		ft_putchar_fd(l + 48, fd, count);
 }

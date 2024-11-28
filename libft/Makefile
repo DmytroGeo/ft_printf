@@ -6,7 +6,7 @@
 #    By: dgeorgiy <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/04 16:44:12 by dgeorgiy          #+#    #+#              #
-#    Updated: 2024/07/08 15:45:20 by dgeorgiy         ###   ########.fr        #
+#    Updated: 2024/11/28 12:57:14 by dgeorgiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,10 @@ SRC = ft_atoi \
 		ft_putendl_fd \
 		ft_putnbr_fd \
 		ft_putstr_fd \
+		ft_puthex_fd \
+		ft_putchex_fd \
+		ft_putuns_fd \
+		ft_putptr_fd \
 		ft_split \
 		ft_strchr \
 		ft_strdup \

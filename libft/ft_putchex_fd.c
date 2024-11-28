@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchex_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgeorgiy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 15:42:05 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2024/11/27 15:33:28 by dgeorgiy         ###   ########.fr       */
+/*   Created: 2024/11/28 10:54:35 by dgeorgiy          #+#    #+#             */
+/*   Updated: 2024/11/28 11:08:47 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd, int *count)
+void	ft_putchex_fd(unsigned int n, int fd, int *count)
 {
-	ft_putstr_fd(s, fd, count);
-	ft_putchar_fd('\n', fd, count);
+	long int	l;
+
+	l = n;
+	if (l >= 16)
+	{
+		ft_putchex_fd(l / 16, fd, count);
+		if ((l % 16) >= 10)
+			ft_putchar_fd((l % 16) + 55, fd, count);
+		else
+			ft_putchar_fd((l % 16) + 48, fd, count); 
+	}
+	else if (l >= 10)
+		ft_putchar_fd(l + 55, fd, count);
+	else
+		ft_putchar_fd(l + 48, fd, count);
 }
