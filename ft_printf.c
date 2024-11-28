@@ -6,7 +6,7 @@
 /*   By: dgeorgiy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 11:33:51 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2024/11/27 15:43:20 by dgeorgiy         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:24:57 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	ft_printf(const char *str, ...)
 {
-	int	n;
-	int	count;
+	int		n;
+	int		count;
 	va_list	args;
+
 	va_start(args, str);
 	n = 0;
 	count = 0;

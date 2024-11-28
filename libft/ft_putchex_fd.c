@@ -6,7 +6,7 @@
 /*   By: dgeorgiy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 10:54:35 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2024/11/28 11:08:47 by dgeorgiy         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:33:18 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putchex_fd(unsigned int n, int fd, int *count)
 		if ((l % 16) >= 10)
 			ft_putchar_fd((l % 16) + 55, fd, count);
 		else
-			ft_putchar_fd((l % 16) + 48, fd, count); 
+			ft_putchar_fd((l % 16) + 48, fd, count);
 	}
 	else if (l >= 10)
 		ft_putchar_fd(l + 55, fd, count);
